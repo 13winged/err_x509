@@ -12,4 +12,4 @@ from .core import X509Fixer
 from .cli import main
 from . import config
 
-__all__ = ['X509Fixer', 'main', 'config', '__version__']
+__all__ = ["X509Fixer", "main", "config", "__version__"]
