@@ -22,10 +22,8 @@ DEFAULT_INPUT_FILES = ["x509_no_fix.yaml", "config.yaml", "clash.yaml"]
 
 # Clash configuration constants
 CLASH_REQUIRED_FIELDS = ["port", "socks-port", "redir-port"]
-CLASH_OPTIONAL_FIELDS = ["allow-lan", "mode",
-                         "log-level", "external-controller"]
-CLASH_PROXY_TYPES = ["trojan", "ss", "ssr",
-                     "vmess", "vless", "http", "socks5", "snell"]
+CLASH_OPTIONAL_FIELDS = ["allow-lan", "mode", "log-level", "external-controller"]
+CLASH_PROXY_TYPES = ["trojan", "ss", "ssr", "vmess", "vless", "http", "socks5", "snell"]
 
 # SSL/TLS related constants
 SSL_FIX_FIELD = "skip-cert-verify"

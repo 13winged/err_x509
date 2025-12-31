@@ -71,8 +71,7 @@ class X509Fixer:
         path = Path(file_path)
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         backup_suffix = config.DEFAULT_SETTINGS["backup_suffix"]
-        backup_path = path.with_suffix(
-            f".{timestamp}{backup_suffix}{path.suffix}")
+        backup_path = path.with_suffix(f".{timestamp}{backup_suffix}{path.suffix}")
 
         try:
             import shutil
@@ -220,8 +219,7 @@ class X509Fixer:
             # Multi-line format
             lines = proxy_text.split("\n")
             processed_lines = []
-            has_skip_verify = any(
-                config.SSL_FIX_FIELD in line for line in lines)
+            has_skip_verify = any(config.SSL_FIX_FIELD in line for line in lines)
 
             for line in lines:
                 if config.SSL_FIX_FIELD in line and not has_skip_verify:
@@ -289,8 +287,7 @@ class X509Fixer:
             input_path = Path(input_file)
             if not input_path.exists():
                 self.log(
-                    config.ERROR_MESSAGES["file_not_found"].format(
-                        file=input_file),
+                    config.ERROR_MESSAGES["file_not_found"].format(file=input_file),
                     "error",
                 )
                 return False, "", 0
