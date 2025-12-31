@@ -1,4 +1,4 @@
-err_x509 v1.1 - SSL Certificate Bypass Tool
+err_x509 - SSL Certificate Bypass Tool
 
 A simple, safe, and reliable utility to automatically add `skip-cert-verify: true` to all proxy entries in YAML configuration files. Perfect for fixing SSL/TLS certificate verification issues in Clash, NekoBox, V2RayXS and other proxy clients.
 
@@ -89,7 +89,3 @@ A: Absolutely. It only adds one parameter, doesn't remove or modify existing one
 
 Q: What if I have 100+ proxies?
 A: Works perfectly. Processes all proxies quickly.
-"File not found"	Ensure x509_no_fix.yaml exists in same folder
-"No proxies processed"	Check your YAML format (use compact { ... } format)
-Antivirus warning	Add to exclusions (open-source, safe code)
-Output file missing	Run as Administrator or check permissions
