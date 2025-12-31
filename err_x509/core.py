@@ -341,16 +341,14 @@ class X509Fixer:
                 fixed_content, proxy_count = self.fix_manually(normalized)
 
             # Add metadata
-            final_content = self.add_metadata(
-                fixed_content, input_file, output_file)
+            final_content = self.add_metadata(fixed_content, input_file, output_file)
 
             # Write output file
             with open(output_file, "w", encoding=encoding) as f:
                 f.write(final_content)
 
             self.log(
-                config.SUCCESS_MESSAGES["file_processed"].format(
-                    file=output_path.name),
+                config.SUCCESS_MESSAGES["file_processed"].format(file=output_path.name),
                 "success",
                 "green",
             )
@@ -375,8 +373,7 @@ class X509Fixer:
         dir_path = Path(directory)
         if not dir_path.exists() or not dir_path.is_dir():
             self.log(
-                config.ERROR_MESSAGES["directory_not_found"].format(
-                    dir=directory),
+                config.ERROR_MESSAGES["directory_not_found"].format(dir=directory),
                 "error",
             )
             return {}
@@ -386,8 +383,7 @@ class X509Fixer:
 
         if not files:
             self.log(
-                config.ERROR_MESSAGES["no_yaml_files"].format(
-                    dir=directory), "warning"
+                config.ERROR_MESSAGES["no_yaml_files"].format(dir=directory), "warning"
             )
             return results
 
@@ -396,8 +392,7 @@ class X509Fixer:
         for file_path in files:
             suffix = config.DEFAULT_SETTINGS["output_suffix"]
             output_file = file_path.with_suffix(f"{suffix}{file_path.suffix}")
-            success, out_path, count = self.fix_file(
-                str(file_path), str(output_file))
+            success, out_path, count = self.fix_file(str(file_path), str(output_file))
             results[str(file_path)] = (success, out_path, count)
 
         return results
