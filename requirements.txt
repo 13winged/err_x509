@@ -1,8 +1,0 @@
-# Core dependencies
-pyyaml>=6.0
-click>=8.0
-
-# Optional dependencies (for enhanced features)
-# colorama>=0.4.6  # Windows color support
-# tqdm>=4.65.0    # Progress bars
-# psutil>=5.9.0   # System information
