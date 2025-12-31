@@ -6,7 +6,6 @@ Configuration and constants for err_x509
 
 import os
 from pathlib import Path
-from typing import List, Dict, Any
 
 # Project metadata
 PROJECT_NAME = "err_x509"
@@ -23,8 +22,10 @@ DEFAULT_INPUT_FILES = ["x509_no_fix.yaml", "config.yaml", "clash.yaml"]
 
 # Clash configuration constants
 CLASH_REQUIRED_FIELDS = ["port", "socks-port", "redir-port"]
-CLASH_OPTIONAL_FIELDS = ["allow-lan", "mode", "log-level", "external-controller"]
-CLASH_PROXY_TYPES = ["trojan", "ss", "ssr", "vmess", "vless", "http", "socks5", "snell"]
+CLASH_OPTIONAL_FIELDS = ["allow-lan", "mode",
+                         "log-level", "external-controller"]
+CLASH_PROXY_TYPES = ["trojan", "ss", "ssr",
+                     "vmess", "vless", "http", "socks5", "snell"]
 
 # SSL/TLS related constants
 SSL_FIX_FIELD = "skip-cert-verify"
@@ -196,8 +197,7 @@ OUTPUT_TEMPLATES = {
 # Statistics
 # Total proxies processed: {proxy_count}
 # SSL verification disabled for all servers
-# Output file: {output_file}
-# 
+# Output file: {output_file
 {security_warning}
 # ===========================================================================
 """,

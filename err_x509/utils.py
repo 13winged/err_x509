@@ -5,13 +5,11 @@ Utility functions for err_x509
 """
 
 import os
-import sys
 import platform
 import re
 import hashlib
-import json
 from pathlib import Path
-from typing import Optional, List, Dict, Any, Tuple
+from typing import List, Dict, Any, Tuple
 from datetime import datetime
 import click
 
@@ -265,7 +263,6 @@ def confirm_overwrite(file_path: Path) -> bool:
 
 def setup_logging(verbose: bool = False, log_file: str = None):
     """Setup logging configuration"""
-    import logging
 
     log_level = logging.DEBUG if verbose else logging.INFO
     log_format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"

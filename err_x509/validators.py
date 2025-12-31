@@ -96,7 +96,8 @@ def validate_proxy_data(proxy: Dict[str, Any]) -> List[str]:
     # Validate proxy type
     if "type" in proxy and proxy["type"] not in config.CLASH_PROXY_TYPES:
         errors.append(
-            f"Invalid proxy type: {proxy['type']}. Must be one of: {', '.join(config.CLASH_PROXY_TYPES)}"
+            f"Invalid proxy type: {proxy['type']}. Must be one of:
+            {', '.join(config.CLASH_PROXY_TYPES)}"
         )
 
     # Validate server (basic URL/hostname check)

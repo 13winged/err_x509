@@ -4,9 +4,6 @@ Tests for CLI functionality
 """
 
 import pytest
-import tempfile
-import os
-import sys
 from click.testing import CliRunner
 from err_x509.cli import cli
 
@@ -178,7 +175,6 @@ port: 7890  # Main port
 proxies:
   # Trojan proxy
   - {name: test, server: s.com, port: 443}
-  
 # End of file"""
 
         input_file = tmp_path / "config.yaml"

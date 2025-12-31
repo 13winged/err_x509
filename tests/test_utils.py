@@ -7,7 +7,24 @@ import pytest
 import tempfile
 import os
 from pathlib import Path
-from err_x509.utils import *
+from err_x509.utils import (
+    get_platform_info,
+    detect_clash_directories,
+    calculate_file_hash,
+    format_file_size,
+    format_duration,
+    validate_proxy_url,
+    is_valid_ip_address,
+    extract_proxy_info,
+    create_backup_file,
+    find_yaml_files,
+    safe_yaml_load,
+    safe_yaml_dump,
+    print_table,
+    get_terminal_size,
+    wrap_text,
+    get_relative_time,
+)
 
 
 class TestFileUtils:
@@ -58,7 +75,8 @@ class TestValidation:
     def test_is_valid_ip_address(self):
         assert is_valid_ip_address("192.168.1.1") is True
         assert is_valid_ip_address("255.255.255.255") is True
-        assert is_valid_ip_address("2001:0db8:85a3:0000:0000:8a2e:0370:7334") is True
+        assert is_valid_ip_address(
+            "2001:0db8:85a3:0000:0000:8a2e:0370:7334") is True
 
         assert is_valid_ip_address("999.999.999.999") is False
         assert is_valid_ip_address("192.168.1") is False

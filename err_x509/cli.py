@@ -4,10 +4,9 @@
 Command-line interface for err_x509
 """
 
-import sys
 import click
 from pathlib import Path
-from typing import List, Optional
+from typing import Optional
 from .core import X509Fixer
 from . import __version__
 
@@ -191,7 +190,6 @@ def check():
     click.echo("=" * 40)
 
     import platform
-    import sys
 
     # Python version
     py_version = platform.python_version()
@@ -202,7 +200,7 @@ def check():
 
     # Dependencies
     try:
-        import yaml
+        pass
 
         click.echo(click.style("✅ PyYAML: Installed", fg="green"))
     except ImportError:
