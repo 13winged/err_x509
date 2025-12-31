@@ -3,7 +3,7 @@ err_x509 - SSL Certificate Bypass Tool
 A simple, safe, and reliable utility to automatically add `skip-cert-verify: true` to all proxy entries in YAML configuration files. Perfect for fixing SSL/TLS certificate verification issues in Clash, NekoBox, V2RayXS and other proxy clients.
 
 - ✅ **TLS Safe**: Preserves all TLS/SSL parameters (sni, alpn, fingerprint, etc.)
-- ✅ **Smart Processing**: Handles both compact `{ ... }` and multi-line formats
+- ✅ **Smart Processing**: Handles both compact and multi-line formats
 - ✅ **Backup Creation**: Automatically creates backup of original file
 - ✅ **Statistics**: Shows detailed processing statistics
 - ✅ **No Format Corruption**: Maintains original YAML structure
@@ -33,7 +33,6 @@ port: 7890
 proxies:
   - { name: Server1, type: trojan, server: s1.com, port: 443, password: pass1, sni: s1.com, alpn: ["h2"], skip-cert-verify: true }
   - { name: Server2, type: vmess, server: s2.com, port: 443, uuid: xxxxx, tls: true, skip-cert-verify: true }
-Notice: All original TLS parameters (sni:, alpn:) are preserved!
 
 🛠 Advanced Usage
 Build from Source
@@ -50,6 +49,7 @@ GOOS=linux GOARCH=amd64 go build -o err_x509_linux main.go
 
 # Build for macOS
 GOOS=darwin GOARCH=amd64 go build -o err_x509_mac main.go
+
 Batch Processing
 Create process.bat:
 
@@ -62,7 +62,9 @@ for %%f in (*.yaml) do (
         move "x509_fixed.yaml" "%%~nf_fixed.yaml"
     )
 )
+
 🔧 Technical Details
+
 What Does It Do?
 Adds skip-cert-verify: true to all proxy entries while:
 Preserving existing TLS parameters
