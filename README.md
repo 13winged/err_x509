@@ -19,16 +19,6 @@ A simple, safe, and reliable utility to automatically add `skip-cert-verify: tru
 4. **Run** `err_x509.exe` (double-click)
 5. **Use** the generated `x509_fixed.yaml`
 
-### Step-by-Step Visual Guide
-BEFORE: AFTER:
-📁 YourFolder/ 📁 YourFolder/
-├── 📄 err_x509.exe ├── 📄 err_x509.exe
-└── 📄 x509_no_fix.yaml ├── 📄 x509_no_fix.yaml
-├── 📄 x509_fixed.yaml ← USE THIS!
-└── 📄 x509_no_fix.yaml.backup
-
-text
-
 ## 📝 Usage Example
 
 ### Input (`x509_no_fix.yaml`):
