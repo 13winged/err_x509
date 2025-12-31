@@ -65,13 +65,9 @@ for %%f in (*.yaml) do (
 🔧 Technical Details
 What Does It Do?
 Adds skip-cert-verify: true to all proxy entries while:
-
 Preserving existing TLS parameters
-
 Maintaining YAML structure
-
 Creating backups
-
 Showing processing statistics
 
 Supported Proxy Types
@@ -81,40 +77,6 @@ Supported Proxy Types
 ✅ SOCKS5/HTTP
 ✅ Any YAML proxy format
 
-Preserved TLS Parameters
-sni: - Server Name Indication
-
-alpn: - Application-Layer Protocol Negotiation
-
-fingerprint: - TLS fingerprint
-
-client-fingerprint: - Client fingerprint
-
-ws-opts: - WebSocket options
-
-network: - Transport protocol
-
-All other proxy parameters
-
-📊 Version History
-v1.1 (Current)
-TLS Safe: Preserves all TLS/SSL parameters
-
-Backup system: Creates .backup files
-
-Statistics: Shows processing details
-
-Improved detection: Better proxy recognition
-
-Bug fixes: Various edge cases handled
-
-v1.0 (Initial)
-Basic functionality
-
-Compact format support
-
-Simple processing
-
 ❓ FAQ
 Q: Does it modify my original file?
 A: No! It creates a new file x509_fixed.yaml. Original file is backed up as x509_no_fix.yaml.backup.
@@ -122,17 +84,11 @@ A: No! It creates a new file x509_fixed.yaml. Original file is backed up as x509
 Q: What if a proxy already has skip-cert-verify?
 A: It skips it and shows in statistics. No duplicate entries.
 
-Q: Does it work with Clash.Meta?
-A: Yes! Preserves all Clash.Meta specific parameters.
-
 Q: Is it safe?
 A: Absolutely. It only adds one parameter, doesn't remove or modify existing ones.
 
 Q: What if I have 100+ proxies?
 A: Works perfectly. Processes all proxies quickly.
-
-🐛 Troubleshooting
-Problem	Solution
 "File not found"	Ensure x509_no_fix.yaml exists in same folder
 "No proxies processed"	Check your YAML format (use compact { ... } format)
 Antivirus warning	Add to exclusions (open-source, safe code)
